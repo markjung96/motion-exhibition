@@ -1,38 +1,78 @@
+/* Font */
+@font-face {
+    font-family: 'YoungBaroque';
+    src: url('@/assets/font/YoungBaroqueStd.otf');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk';
+    src: url('@/assets/font/TomatoGrotesk-Black.otf');
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    font-family: TomatoGrotesk;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.contents {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    aspect-ratio: 159 / 240;
+    height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#background-video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title,
+.description {
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.slide-in {
+    animation: slideIn 0.5s forwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slide-out {
+    animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
 }
