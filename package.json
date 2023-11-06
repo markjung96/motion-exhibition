@@ -11,7 +11,7 @@
         "@types/react": "^18.2.31",
         "@types/react-dom": "^18.2.14",
         "eslint-config-airbnb": "^19.0.4",
-        "gooey-react": "^1.1.0",
+        "gh-pages": "^6.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-scripts": "5.0.1",
@@ -20,9 +20,10 @@
     },
     "scripts": {
         "start": "craco start",
-        "build": "craco build",
+        "predeploy": "craco build",
         "test": "craco test",
-        "eject": "craco eject"
+        "eject": "craco eject",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
@@ -52,5 +53,6 @@
         "eslint-plugin-prettier": "^5.0.1",
         "prettier": "^3.0.3",
         "tsconfig-paths-webpack-plugin": "^4.1.0"
-    }
+    },
+    "homepage": "https://markjung96.github.io/motion-exhibition/"
 }
