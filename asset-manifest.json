@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/motion-exhibition/static/css/main.94e5c077.css",
+    "main.js": "/motion-exhibition/static/js/main.0f3dceca.js",
+    "static/media/background_video.mp4": "/motion-exhibition/static/media/background_video.bd093d19ae75ed49780a.mp4",
+    "static/media/letter.png": "/motion-exhibition/static/media/letter.2be095f1834f62c10cd1.png",
+    "static/media/TomatoGrotesk-Black.otf": "/motion-exhibition/static/media/TomatoGrotesk-Black.e5ffa6c973808a577be0.otf",
+    "static/media/GillSans.otf": "/motion-exhibition/static/media/GillSans.0c3ea264fff3ef2bfce7.otf",
+    "static/media/GillSans-Bold.otf": "/motion-exhibition/static/media/GillSans-Bold.6110e26abc5eece5ce42.otf",
+    "static/media/YoungBaroqueStd.otf": "/motion-exhibition/static/media/YoungBaroqueStd.4872df6f00950e2f065b.otf",
+    "static/media/instagram.svg": "/motion-exhibition/static/media/instagram.c0113239bc87d217189205448af0e84a.svg",
+    "index.html": "/motion-exhibition/index.html",
+    "main.94e5c077.css.map": "/motion-exhibition/static/css/main.94e5c077.css.map",
+    "main.0f3dceca.js.map": "/motion-exhibition/static/js/main.0f3dceca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.94e5c077.css",
+    "static/js/main.0f3dceca.js"
+  ]
+}
