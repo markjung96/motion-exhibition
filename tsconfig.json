@@ -27,7 +27,8 @@
     / react-native : .js 파일로 컴파일 된다. (JSX 코드가 그대로 유지됨)
     */
         "jsx": "preserve", // JSX파일을 어떻게 컴파일 할지 결정
-        "incremental": true // 증분 컴파일,
+        "incremental": true, // 증분 컴파일,
+        "typeRoots": ["./@types"]
     },
 
     // * 없거나 하나 이상의 문자열과 일치 (디렉터리 구분자 제외)

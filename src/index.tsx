@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App.tsx';
 import './index.css';
+import { InputProvider } from './hooks/useInputs.tsx';
 
 const run = async () => {
     const container = document.getElementById('root');
@@ -12,7 +13,9 @@ const run = async () => {
 
     root.render(
         <React.StrictMode>
-            <App />
+            <InputProvider>
+                <App />
+            </InputProvider>
         </React.StrictMode>,
     );
 };
