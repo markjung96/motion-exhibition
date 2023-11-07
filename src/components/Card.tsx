@@ -43,6 +43,7 @@ export const Card = ({ input, isCenter, index, total }: Props) => {
                 <img src={instagram} alt="instagram" width={8} height={8} />
                 <p>{input.instagram}</p>
             </div>
+            <p className="card-index">No.{index}</p>
         </div>
     );
 };

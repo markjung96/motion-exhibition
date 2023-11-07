@@ -29,17 +29,17 @@
     z-index: -2;
 }
 
-.modal input.answer {
+.modal textarea.answer {
     position: absolute;
-    top: 51%;
+    top: 50%;
     left: 0;
     right: 0;
     margin: auto;
     width: calc(100% - 100px);
-    transform: translateY(60%);
 
-    font-family: 'GillSans-bold';
-    font-size: 1.16rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.18rem;
+    font-weight: bold;
 
     background: transparent;
 
@@ -47,6 +47,8 @@
     outline: none;
 
     text-align: center;
+
+    resize: none;
 }
 
 .modal input.insta {
@@ -55,22 +57,20 @@
     border-bottom: 1px solid gray;
     background: transparent;
 
-    font-family: 'GillSans-bold';
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 
-    width: 36px;
+    width: 54px;
 }
 
 .modal div.insta {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 6px;
 
     position: absolute;
-    top: 91%;
-    right: 0;
-    left: 0;
-    margin: auto;
+    top: 18%;
+    left: 6%;
 }
 
 .modal-overlay {

@@ -20,14 +20,20 @@ interface Props {
     children: React.ReactNode;
 }
 const InputProvider: React.FC<Props> = ({ children }) => {
-    const [inputs, setInputs] = useState<InputType[]>([]);
+    const localInputs = localStorage.getItem('inputs');
+
+    const [inputs, setInputs] = useState<InputType[]>(
+        localInputs ? JSON.parse(localInputs) : [],
+    );
 
     const createInputs = (input: InputType) => {
         setInputs((prev) => [...prev, input]);
+        localStorage.setItem('inputs', JSON.stringify(inputs));
     };
 
     const deleteInputs = (text: string) => {
         setInputs((prev) => prev.filter((input) => input.text !== text));
+        localStorage.setItem('inputs', JSON.stringify(inputs));
     };
 
     return (

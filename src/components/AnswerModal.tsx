@@ -26,10 +26,12 @@ export const Modal: React.FC<Props> = ({
     });
     const [className, setClassName] = useState<string | null>(null);
     const inputs = useContext(InputContext);
-    const answerRef = React.useRef<HTMLInputElement>(null);
+    const answerRef = React.useRef<HTMLTextAreaElement>(null);
     const instaRef = React.useRef<HTMLInputElement>(null);
 
-    const handleAnswerInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleAnswerInput = (
+        event: React.ChangeEvent<HTMLTextAreaElement>,
+    ) => {
         setInput((prev) => ({ ...prev, text: event.target.value }));
     };
 
@@ -107,11 +109,11 @@ export const Modal: React.FC<Props> = ({
                     className ? className : ''
                 }`}
             >
-                <input
+                <textarea
                     className="answer"
                     ref={answerRef}
-                    type="text"
                     onChange={handleAnswerInput}
+                    rows={3}
                     autoFocus
                     value={input.text}
                 />
