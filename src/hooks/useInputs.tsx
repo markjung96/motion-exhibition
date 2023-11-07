@@ -27,6 +27,7 @@ const InputProvider: React.FC<Props> = ({ children }) => {
     );
 
     const createInputs = (input: InputType) => {
+        console.log('');
         setInputs((prev) => [...prev, input]);
         localStorage.setItem('inputs', JSON.stringify(inputs));
     };
