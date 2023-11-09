@@ -15,7 +15,7 @@ interface Props {
     setTargetInput: (input: IInput) => void;
 }
 
-const MAX_CARD_COUNT = 35;
+const MAX_CARD_COUNT = 30;
 
 export const CardStack = ({ inputs, setTargetInput }: Props) => {
     // const inputs = useContext(InputContext);

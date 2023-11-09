@@ -69,6 +69,7 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, targetInput }) => {
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.isComposing || event.keyCode === 229) return;
             if (isOpen) {
                 if (event.key === 'Escape') {
                     onClose();

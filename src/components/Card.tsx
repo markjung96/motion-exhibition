@@ -105,7 +105,7 @@ export const Card = ({ input, index, total, setTargetInput }: Props) => {
             </div> */}
             <div className="card-instagram">
                 <img src={instagram} alt="instagram" width={10} height={10} />
-                <p>{input.instagram}</p>
+                <p>{input.instagram ? `@${input.instagram}` : ''}</p>
             </div>
             <p className="card-index">No.{input.id}</p>
         </div>

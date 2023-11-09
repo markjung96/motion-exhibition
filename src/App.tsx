@@ -22,7 +22,7 @@ const A = () => (
 );
 const B = () => (
     <h2 className="description">
-        sarang is stste of mind that evokes <br />
+        Sarang is a stste of mind that evokes <br />
         love for various aspects of life <br />
         including friend, family, nature, God, <br />
         furry friends and so many more...
@@ -104,6 +104,8 @@ function App() {
                     <>
                         <p className="c-text">
                             What object reminds you of Sarang?
+                            <br />
+                            Click the card and let your story unfold.
                         </p>
                         <CardStack
                             inputs={input.inputs}
@@ -115,6 +117,8 @@ function App() {
                     <>
                         <p className="c-text">
                             What object reminds you of Sarang?
+                            <br />
+                            Click the card and let your story unfold.
                         </p>
                     </>
                 )}
