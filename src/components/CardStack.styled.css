@@ -14,9 +14,9 @@
 }
 
 .rotate {
-    /* animation: rotate 100s linear infinite; */
+    animation: rotate 100s linear infinite;
 }
-
+/*  */
 .fade-in {
     animation: fade-in 1s forwards;
 }

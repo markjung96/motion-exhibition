@@ -20,22 +20,19 @@
 }
 
 h1 {
-    font-size: 72x;
-    text-align: center;
+    font-size: 100px;
+    text-shadow: 14px 14px 14px rgba(0, 0, 0, 0.24);
 }
 h1 > span {
-    font-size: 82px;
+    font-size: 144px;
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 80px;
+    text-shadow: 14px 14px 14px rgba(0, 0, 0, 0.24);
 }
 
 .App {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     width: 100vw;
     height: 100vh;
 
@@ -49,25 +46,29 @@ h2 {
     align-items: center;
     justify-content: center;
 
-    aspect-ratio: 159 / 240;
-    height: 100%;
+    aspect-ratio: 1821 / 1024;
+    width: 100%;
 
     overflow: hidden;
 
     cursor: pointer;
 }
 
+.contents:has(h1.title, h2.description) {
+    background-color: #0000004d;
+}
+
 .c-text {
     position: absolute;
-    top: 20%;
+    top: 10%;
 
-    font-size: 19px;
+    font-size: 50px;
 
     font-family: TomatoGrotesk;
     color: white;
     font-style: italic;
 
-    z-index: 9999;
+    z-index: 0;
 }
 
 #background-video {

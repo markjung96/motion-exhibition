@@ -8,6 +8,12 @@ import { CardStack } from '@components/CardStack.tsx';
 import './App.css';
 import { InputContext } from './hooks/useInputs.tsx';
 
+interface ITargetInput {
+    id: number;
+    text: string;
+    instagram: string | null;
+}
+
 const A = () => (
     <h1 className="title">
         what object reminds you of <br />
@@ -24,9 +30,9 @@ const B = () => (
 );
 
 const durations: any = {
-    A: 4000,
-    B: 4000,
-    C: 20000,
+    A: 10000,
+    B: 10000,
+    C: 30000,
     D: 200000,
 };
 
@@ -43,6 +49,7 @@ function App() {
     const [currentComponent, setCurrentComponent] = useState('A');
     const [animationClass, setAnimationClass] = useState('slide-in');
     const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+    const [targetInput, setTargetInput] = useState<ITargetInput | null>(null);
 
     const setTimeAnimation = () =>
         setTimeout(() => {
@@ -54,23 +61,12 @@ function App() {
         }, durations[currentComponent] - 500);
 
     useEffect(() => {
-        console.log('currentComponent', currentComponent);
         const interval = setTimeAnimation();
 
         setTimer(interval);
 
         return () => clearTimeout(timer ? timer : 0);
     }, [currentComponent]);
-
-    const handleOnEnter = () => {
-        if (currentComponent === 'C') {
-            setCurrentComponent('A');
-            setTimeout(() => {
-                setCurrentComponent('C');
-            });
-        } else setCurrentComponent('C');
-        clearInterval(timer ? timer : 0);
-    };
 
     const handleOnOpen = () => {
         setCurrentComponent('D');
@@ -81,21 +77,26 @@ function App() {
     const handleOnClose = (event?: MouseEvent) => {
         event?.stopPropagation();
         setIsOpen(false);
+        setTargetInput(null);
         setCurrentComponent('C');
+    };
+
+    const handleTargetInput = (targetInput: ITargetInput) => {
+        setTargetInput(targetInput);
     };
 
     return (
         <div className="App">
             <div className="contents" onClick={handleOnOpen}>
                 <Modal
+                    targetInput={targetInput}
                     isOpen={isOpen}
                     onClose={handleOnClose}
-                    onEnter={handleOnEnter}
                 />
                 <video id="background-video" loop autoPlay muted preload="auto">
                     <source src={backgroundVideo} type="video/mp4" />
                 </video>
-                <div className={`${animationClass}`}>
+                <div className={`title ${animationClass}`}>
                     {currentComponent === 'A' && <A />}
                     {currentComponent === 'B' && <B />}
                 </div>
@@ -104,7 +105,10 @@ function App() {
                         <p className="c-text">
                             What object reminds you of Sarang?
                         </p>
-                        <CardStack inputs={input.inputs} />
+                        <CardStack
+                            inputs={input.inputs}
+                            setTargetInput={handleTargetInput}
+                        />
                     </>
                 )}
                 {currentComponent === 'D' && (
@@ -114,7 +118,6 @@ function App() {
                         </p>
                     </>
                 )}
-                {/* <CardStack inputs={input.inputs} /> */}
             </div>
         </div>
     );

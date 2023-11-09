@@ -1,31 +1,31 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, MouseEvent } from 'react';
 import './AnswerModal.styled.css';
 
 import instagram from '../assets/img/instagram.svg';
+import trashcan from '../assets/img/icon_trash_can.svg';
 import { InputContext } from '@hooks/useInputs';
 
 interface Props {
     isOpen: boolean;
     onClose: () => void;
-    onEnter: () => void;
-    targetInput?: {
+    targetInput: {
+        id: number;
         text: string;
         instagram: string | null;
-    };
+    } | null;
 }
 
-export const Modal: React.FC<Props> = ({
-    isOpen,
-    onClose,
-    onEnter,
-    targetInput,
-}) => {
-    const [input, setInput] = useState({
+export const Modal: React.FC<Props> = ({ isOpen, onClose, targetInput }) => {
+    const inputs = useContext(InputContext);
+    const [input, setInput] = useState<{
+        text: string;
+        instagram: string | null;
+    }>({
         text: '',
-        instagram: '',
+        instagram: null,
     });
     const [className, setClassName] = useState<string | null>(null);
-    const inputs = useContext(InputContext);
+
     const answerRef = React.useRef<HTMLTextAreaElement>(null);
     const instaRef = React.useRef<HTMLInputElement>(null);
 
@@ -41,28 +41,31 @@ export const Modal: React.FC<Props> = ({
         setInput((prev) => ({ ...prev, instagram: event.target.value }));
     };
 
-    const handleOnEnter = () => {
-        if (input.text === '') return;
-        onEnter();
-        inputs.createInputs(input);
-        setInput({
-            text: '',
-            instagram: '',
-        });
+    const handleOnclickTrashCan = (event: MouseEvent) => {
+        event.stopPropagation();
+        if (targetInput) {
+            inputs.deleteInputs(targetInput.id);
+        }
+        onClose();
+        setClassName('');
     };
 
     useEffect(() => {
         if (isOpen) {
             answerRef.current?.focus();
-
-            if (targetInput) {
-                setInput({
-                    ...targetInput,
-                    instagram: targetInput.instagram || '',
-                });
-            }
         }
     }, [isOpen]);
+
+    useEffect(() => {
+        if (targetInput) {
+            setInput(targetInput);
+        } else {
+            setInput({
+                text: '',
+                instagram: '',
+            });
+        }
+    }, [targetInput]);
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -83,12 +86,27 @@ export const Modal: React.FC<Props> = ({
                         setClassName('reduction');
                         setTimeout(() => {
                             setClassName('disappear');
-                            handleOnEnter();
+                            if (input.text === '') return;
+                            if (!targetInput) {
+                                inputs.createInputs({
+                                    id: inputs.inputs.length + 1,
+                                    ...input,
+                                });
+                            } else {
+                                inputs.updateInputs(targetInput.id, {
+                                    id: targetInput.id,
+                                    ...input,
+                                });
+                            }
+                            onClose();
+                            setInput({
+                                text: '',
+                                instagram: '',
+                            });
                         }, 1000);
                         setTimeout(() => {
                             setClassName('');
                         }, 2000);
-                        onClose();
                         return;
                     }
                 }
@@ -99,7 +117,7 @@ export const Modal: React.FC<Props> = ({
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [isOpen, onClose, handleOnEnter]);
+    }, [isOpen, onClose, targetInput, input]);
 
     return (
         <React.Fragment>
@@ -109,29 +127,38 @@ export const Modal: React.FC<Props> = ({
                     className ? className : ''
                 }`}
             >
-                <textarea
-                    className="answer"
-                    ref={answerRef}
-                    onChange={handleAnswerInput}
-                    rows={3}
-                    autoFocus
-                    value={input.text}
-                />
+                <div>
+                    <textarea
+                        className="answer"
+                        ref={answerRef}
+                        onChange={handleAnswerInput}
+                        autoFocus
+                        value={input.text}
+                    />
+                </div>
                 <div className="insta">
                     <img
                         src={instagram}
                         alt="instagram"
-                        width={13}
-                        height={13}
+                        width={20}
+                        height={20}
                     />
                     <input
                         className="insta"
                         ref={instaRef}
                         type="text"
                         onChange={handleInstagramInput}
-                        value={input.instagram}
+                        value={input?.instagram || ''}
                     />
                 </div>
+                <img
+                    className="trash-can"
+                    src={trashcan}
+                    alt="trashcan"
+                    width={20}
+                    height={20}
+                    onClick={handleOnclickTrashCan}
+                />
             </div>
         </React.Fragment>
     );

@@ -1,19 +1,22 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 type InputType = {
+    id: number;
     text: string;
     instagram: string | null;
 };
 interface IInputContext {
     inputs: InputType[];
     createInputs: (input: InputType) => void;
-    deleteInputs: (text: string) => void;
+    deleteInputs: (id: number) => void;
+    updateInputs: (id: number, input: InputType) => void;
 }
 
 const InputContext = createContext<IInputContext>({
     inputs: [],
     createInputs: () => {},
     deleteInputs: () => {},
+    updateInputs: () => {},
 });
 
 interface Props {
@@ -27,18 +30,26 @@ const InputProvider: React.FC<Props> = ({ children }) => {
     );
 
     const createInputs = (input: InputType) => {
-        console.log('');
         setInputs((prev) => [...prev, input]);
         localStorage.setItem('inputs', JSON.stringify(inputs));
     };
 
-    const deleteInputs = (text: string) => {
-        setInputs((prev) => prev.filter((input) => input.text !== text));
+    const deleteInputs = (id: number) => {
+        setInputs((prev) => prev.filter((input) => input.id !== id));
+        localStorage.setItem('inputs', JSON.stringify(inputs));
+    };
+
+    const updateInputs = (id: number, input: InputType) => {
+        setInputs((prev) =>
+            prev.map((prevInput) => (prevInput.id === id ? input : prevInput)),
+        );
         localStorage.setItem('inputs', JSON.stringify(inputs));
     };
 
     return (
-        <InputContext.Provider value={{ inputs, createInputs, deleteInputs }}>
+        <InputContext.Provider
+            value={{ inputs, createInputs, deleteInputs, updateInputs }}
+        >
             {children}
         </InputContext.Provider>
     );
