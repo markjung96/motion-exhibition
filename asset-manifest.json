@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/motion-exhibition/static/css/main.94e5c077.css",
-    "main.js": "/motion-exhibition/static/js/main.0f3dceca.js",
-    "static/media/background_video.mp4": "/motion-exhibition/static/media/background_video.bd093d19ae75ed49780a.mp4",
-    "static/media/letter.png": "/motion-exhibition/static/media/letter.2be095f1834f62c10cd1.png",
+    "main.css": "/motion-exhibition/static/css/main.c5b416d6.css",
+    "main.js": "/motion-exhibition/static/js/main.bc407ca4.js",
+    "static/media/background_video.mp4": "/motion-exhibition/static/media/background_video.c814d73c1d977711514f.mp4",
+    "static/media/letter.png": "/motion-exhibition/static/media/letter.14f7fce909dba322ada6.png",
     "static/media/TomatoGrotesk-Black.otf": "/motion-exhibition/static/media/TomatoGrotesk-Black.e5ffa6c973808a577be0.otf",
     "static/media/GillSans.otf": "/motion-exhibition/static/media/GillSans.0c3ea264fff3ef2bfce7.otf",
     "static/media/GillSans-Bold.otf": "/motion-exhibition/static/media/GillSans-Bold.6110e26abc5eece5ce42.otf",
     "static/media/YoungBaroqueStd.otf": "/motion-exhibition/static/media/YoungBaroqueStd.4872df6f00950e2f065b.otf",
-    "static/media/instagram.svg": "/motion-exhibition/static/media/instagram.c0113239bc87d217189205448af0e84a.svg",
+    "static/media/instagram.svg": "/motion-exhibition/static/media/instagram.7ab175516fbd9028f04c9e827af3210a.svg",
     "index.html": "/motion-exhibition/index.html",
-    "main.94e5c077.css.map": "/motion-exhibition/static/css/main.94e5c077.css.map",
-    "main.0f3dceca.js.map": "/motion-exhibition/static/js/main.0f3dceca.js.map"
+    "static/media/icon_trash_can.svg": "/motion-exhibition/static/media/icon_trash_can.7ff0e69d6bb74d6f970d170088e79ae6.svg",
+    "main.c5b416d6.css.map": "/motion-exhibition/static/css/main.c5b416d6.css.map",
+    "main.bc407ca4.js.map": "/motion-exhibition/static/js/main.bc407ca4.js.map"
   },
   "entrypoints": [
-    "static/css/main.94e5c077.css",
-    "static/js/main.0f3dceca.js"
+    "static/css/main.c5b416d6.css",
+    "static/js/main.bc407ca4.js"
   ]
 }
