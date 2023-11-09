@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/motion-exhibition/static/css/main.e18c16cb.css",
-    "main.js": "/motion-exhibition/static/js/main.e0adcd6c.js",
+    "main.js": "/motion-exhibition/static/js/main.fb9dac8e.js",
     "static/media/background_video.mp4": "/motion-exhibition/static/media/background_video.c814d73c1d977711514f.mp4",
     "static/media/letter.png": "/motion-exhibition/static/media/letter.14f7fce909dba322ada6.png",
     "static/media/TomatoGrotesk-Black.otf": "/motion-exhibition/static/media/TomatoGrotesk-Black.e5ffa6c973808a577be0.otf",
@@ -12,10 +12,10 @@
     "index.html": "/motion-exhibition/index.html",
     "static/media/icon_trash_can.svg": "/motion-exhibition/static/media/icon_trash_can.7ff0e69d6bb74d6f970d170088e79ae6.svg",
     "main.e18c16cb.css.map": "/motion-exhibition/static/css/main.e18c16cb.css.map",
-    "main.e0adcd6c.js.map": "/motion-exhibition/static/js/main.e0adcd6c.js.map"
+    "main.fb9dac8e.js.map": "/motion-exhibition/static/js/main.fb9dac8e.js.map"
   },
   "entrypoints": [
     "static/css/main.e18c16cb.css",
-    "static/js/main.e0adcd6c.js"
+    "static/js/main.fb9dac8e.js"
   ]
 }
