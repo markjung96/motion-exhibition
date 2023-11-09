@@ -60,13 +60,13 @@ function App() {
             }, 500); // 애니메이션 시간
         }, durations[currentComponent] - 500);
 
-    // useEffect(() => {
-    //     const interval = setTimeAnimation();
+    useEffect(() => {
+        const interval = setTimeAnimation();
 
-    //     setTimer(interval);
+        setTimer(interval);
 
-    //     return () => clearTimeout(timer ? timer : 0);
-    // }, [currentComponent]);
+        return () => clearTimeout(timer ? timer : 0);
+    }, [currentComponent]);
 
     const handleOnOpen = () => {
         setCurrentComponent('D');
