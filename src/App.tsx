@@ -8,6 +8,9 @@ import { CardStack } from '@components/CardStack.tsx';
 import './App.css';
 import { InputContext } from './hooks/useInputs.tsx';
 
+import CloseFull from '@assets/img/icon_close_full.svg';
+import OpenFull from '@assets/img/icon_open_full.svg';
+
 interface ITargetInput {
     id: number;
     text: string;
@@ -77,7 +80,8 @@ function App() {
         setTargetInput(targetInput);
     };
 
-    const handleDoubleClickFullScreen = () => {
+    const handleToggleClickFullScreen = (event: MouseEvent) => {
+        event.stopPropagation();
         const fullscreenElement = document.fullscreenElement;
         const elem = document.documentElement as HTMLElement;
         console.log('fullscreenElement', fullscreenElement);
@@ -102,11 +106,19 @@ function App() {
 
     return (
         <div className="App">
-            <div
-                className="contents"
-                onClick={handleOnOpen}
-                onDoubleClick={handleDoubleClickFullScreen}
-            >
+            <div className="full-screen" onClick={handleToggleClickFullScreen}>
+                <img
+                    src={
+                        document.fullscreenElement === null
+                            ? OpenFull
+                            : CloseFull
+                    }
+                    alt="fullscreen"
+                    width={48}
+                    height={48}
+                />
+            </div>
+            <div className="contents" onClick={handleOnOpen}>
                 <Modal
                     targetInput={targetInput}
                     isOpen={isOpen}

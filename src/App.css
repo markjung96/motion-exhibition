@@ -92,6 +92,27 @@ h2 {
     text-align: center;
 }
 
+.full-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    position: absolute;
+    width: 64px;
+    height: 64px;
+
+    z-index: 99;
+
+    top: 1%;
+    left: 1%;
+}
+
+.full-screen:hover {
+    background-color: #ffffff4d;
+}
+
 .slide-in {
     animation: slideIn 1s forwards;
 }
