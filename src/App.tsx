@@ -63,10 +63,18 @@ function App() {
             }, 500); // 애니메이션 시간
         }, durations[currentComponent] - 500);
 
+    const setFullScreen = () => {
+        const elem = document.documentElement as HTMLElement;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        }
+    };
+
     const handleOnOpen = () => {
         setCurrentComponent('D');
         clearInterval(timer ? timer : 0);
         setIsOpen(true);
+        setFullScreen();
     };
 
     const handleOnClose = (event?: MouseEvent) => {
@@ -74,6 +82,7 @@ function App() {
         setIsOpen(false);
         setTargetInput(null);
         setCurrentComponent('C');
+        setFullScreen();
     };
 
     const handleTargetInput = (targetInput: ITargetInput) => {
@@ -82,10 +91,7 @@ function App() {
 
     const handleToggleClickFullScreen = (event: MouseEvent) => {
         event.stopPropagation();
-        const elem = document.documentElement as HTMLElement;
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        }
+        setFullScreen();
     };
 
     useEffect(() => {
