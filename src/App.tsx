@@ -74,7 +74,6 @@ function App() {
         setCurrentComponent('D');
         clearInterval(timer ? timer : 0);
         setIsOpen(true);
-        setFullScreen();
     };
 
     const handleOnClose = (event?: MouseEvent) => {
@@ -82,7 +81,6 @@ function App() {
         setIsOpen(false);
         setTargetInput(null);
         setCurrentComponent('C');
-        setFullScreen();
     };
 
     const handleTargetInput = (targetInput: ITargetInput) => {
@@ -101,6 +99,18 @@ function App() {
 
         return () => clearTimeout(timer ? timer : 0);
     }, [currentComponent]);
+
+    useEffect(() => {
+        document.addEventListener('keypress', (event: KeyboardEvent) => {
+            if (event.key === 'Enter') {
+                handleOnOpen();
+            }
+        });
+
+        return () => {
+            document.removeEventListener('keypress', () => {});
+        };
+    }, []);
 
     return (
         <div className="App">
