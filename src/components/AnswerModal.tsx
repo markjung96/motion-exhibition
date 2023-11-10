@@ -32,12 +32,14 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, targetInput }) => {
     const handleAnswerInput = (
         event: React.ChangeEvent<HTMLTextAreaElement>,
     ) => {
+        event.preventDefault();
         setInput((prev) => ({ ...prev, text: event.target.value }));
     };
 
     const handleInstagramInput = (
         event: React.ChangeEvent<HTMLInputElement>,
     ) => {
+        event.preventDefault();
         setInput((prev) => ({ ...prev, instagram: event.target.value }));
     };
 
