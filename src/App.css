@@ -30,7 +30,7 @@ h1 > span {
 
 h2 {
     text-align: center;
-    font-size: 80px;
+    font-size: 76px;
     text-shadow: 14px 14px 14px rgba(0, 0, 0, 0.24);
 }
 
@@ -54,8 +54,6 @@ h2 {
     overflow: hidden;
 
     cursor: pointer;
-
-    /* background-color: red; */
 }
 
 .contents:has(h1.title, h2.description) {
@@ -64,9 +62,9 @@ h2 {
 
 .c-text {
     position: absolute;
-    top: 10%;
+    top: 8%;
 
-    font-size: 50px;
+    font-size: 38px;
 
     text-align: center;
 
@@ -109,8 +107,8 @@ h2 {
 
     z-index: 99;
 
-    top: 1%;
-    left: 1%;
+    top: 0.5%;
+    left: 0.5%;
 }
 
 .slide-in {

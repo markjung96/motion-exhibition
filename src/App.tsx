@@ -82,17 +82,9 @@ function App() {
 
     const handleToggleClickFullScreen = (event: MouseEvent) => {
         event.stopPropagation();
-        const fullscreenElement = document.fullscreenElement;
         const elem = document.documentElement as HTMLElement;
-        console.log('fullscreenElement', fullscreenElement);
-        if (fullscreenElement === null) {
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            }
-        } else {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            }
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
         }
     };
 
@@ -114,8 +106,8 @@ function App() {
                             : CloseFull
                     }
                     alt="fullscreen"
-                    width={48}
-                    height={48}
+                    width={16}
+                    height={16}
                 />
             </div>
             <div className="contents" onClick={handleOnOpen}>
@@ -155,7 +147,11 @@ function App() {
                     </>
                 )}
                 {/* <>
-                    <p className="c-text">What object reminds you of Sarang?</p>
+                    <p className="c-text">
+                        What object reminds you of Sarang?
+                        <br />
+                        Click the background to let your story unfold.
+                    </p>
                     <CardStack
                         inputs={input.inputs}
                         setTargetInput={handleTargetInput}

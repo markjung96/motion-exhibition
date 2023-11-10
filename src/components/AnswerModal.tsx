@@ -142,8 +142,8 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, targetInput }) => {
                     <img
                         src={instagram}
                         alt="instagram"
-                        width={20}
-                        height={20}
+                        width={12}
+                        height={12}
                     />
                     <input
                         className="insta"
@@ -157,8 +157,8 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, targetInput }) => {
                     className="trash-can"
                     src={trashcan}
                     alt="trashcan"
-                    width={20}
-                    height={20}
+                    width={14}
+                    height={14}
                     onClick={handleOnclickTrashCan}
                 />
             </div>

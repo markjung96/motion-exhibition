@@ -21,7 +21,7 @@ export const Card = ({ input, index, total, setTargetInput }: Props) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [style, setStyle] = useState({
         zIndex: index,
-        transform: `rotate(${0}deg) translateY(-220%)`,
+        transform: `rotate(${0}deg) translateY(-160%)`,
         transition: 'all 3s ease-in-out',
     });
 
@@ -39,29 +39,27 @@ export const Card = ({ input, index, total, setTargetInput }: Props) => {
                     zIndex: 1000,
                     transform: `${prev.transform}`,
                     transition: 'all 0.5s ease',
-                    width: '330px',
-                    height: '440px',
+                    width: '220px',
+                    height: '330px',
                 }));
             } else {
                 setStyle((prev) => ({
                     ...prev,
                     zIndex: index,
                     transform: `${prev.transform}`,
-                    width: '300px',
-                    height: '400px',
+                    width: '200px',
+                    height: '300px',
                 }));
             }
         }, 7000);
-
         const deg =
             (360 / total) * index > 180
                 ? (360 / total) * index - 360
                 : (360 / total) * index;
-
         setTimeout(() => {
             setStyle({
                 zIndex: index,
-                transform: `rotate(${deg}deg) translateY(-220%)`,
+                transform: `rotate(${deg}deg) translateY(-160%)`,
                 transition: 'all 3s ease-in-out',
             });
             cardRef.current?.addEventListener('mouseenter', () => {
@@ -70,8 +68,8 @@ export const Card = ({ input, index, total, setTargetInput }: Props) => {
                     zIndex: 1000,
                     transform: `${prev.transform}`,
                     transition: 'all 0.5s ease',
-                    width: '330px',
-                    height: '440px',
+                    width: '220px',
+                    height: '330px',
                 }));
             });
             cardRef.current?.addEventListener('mouseleave', () => {
@@ -79,12 +77,11 @@ export const Card = ({ input, index, total, setTargetInput }: Props) => {
                     ...prev,
                     zIndex: index,
                     transform: `${prev.transform}`,
-                    width: '300px',
-                    height: '400px',
+                    width: '200px',
+                    height: '300px',
                 }));
             });
         }, 1000);
-
         return () => {
             clearInterval(interval);
             cardRef.current?.removeEventListener('mouseenter', () => {});
@@ -104,7 +101,7 @@ export const Card = ({ input, index, total, setTargetInput }: Props) => {
                 <p>{input.text}</p>
             </div> */}
             <div className="card-instagram">
-                <img src={instagram} alt="instagram" width={10} height={10} />
+                <img src={instagram} alt="instagram" width={6} height={6} />
                 <p>{input.instagram ? `@${input.instagram}` : ''}</p>
             </div>
             <p className="card-index">No.{input.id}</p>

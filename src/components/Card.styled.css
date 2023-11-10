@@ -1,6 +1,6 @@
 .card {
-    width: 300px; /* 실제 크기 조정 */
-    height: 400px;
+    width: 200px; /* 실제 크기 조정 */
+    height: 300px;
 
     display: flex;
     justify-content: center;
@@ -12,9 +12,9 @@
     background-size: contain;
     background-repeat: no-repeat;
 
-    transform-origin: 75% 75%;
+    transform-origin: 65% 65%;
 
-    transform: translateY(-200%);
+    transform: translateY(-160%);
 }
 
 textarea {
@@ -23,7 +23,7 @@ textarea {
 
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
 
     word-break: break-all;
@@ -41,13 +41,13 @@ textarea {
     position: absolute;
 
     text-align: center;
-    top: 85%;
+    top: 76%;
     left: 0;
     right: 0;
     margin: auto;
 
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 9px;
+    font-size: 6px;
     color: #140b58;
 }
 
@@ -61,7 +61,7 @@ textarea {
     left: 6%;
 
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-size: 6px;
 
     text-align: center;
 }
@@ -73,16 +73,4 @@ textarea {
     font-family: Arial, Helvetica, sans-serif;
 
     color: #726d9d;
-}
-
-@keyframes float {
-    0% {
-        transform: translatey(0px);
-    }
-    50% {
-        transform: translatey(-20px);
-    }
-    100% {
-        transform: translatey(0px);
-    }
 }
