@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/motion-exhibition/static/css/main.8f21a031.css",
-    "main.js": "/motion-exhibition/static/js/main.63111fff.js",
+    "main.css": "/motion-exhibition/static/css/main.763a423c.css",
+    "main.js": "/motion-exhibition/static/js/main.ad0b043e.js",
     "static/media/background_video.mp4": "/motion-exhibition/static/media/background_video.1dcf36b3dce1e535df5c.mp4",
     "static/media/letter.png": "/motion-exhibition/static/media/letter.14f7fce909dba322ada6.png",
     "static/media/TomatoGrotesk-Black.otf": "/motion-exhibition/static/media/TomatoGrotesk-Black.e5ffa6c973808a577be0.otf",
@@ -13,11 +13,11 @@
     "static/media/icon_trash_can.svg": "/motion-exhibition/static/media/icon_trash_can.7ff0e69d6bb74d6f970d170088e79ae6.svg",
     "static/media/icon_close_full.svg": "/motion-exhibition/static/media/icon_close_full.92a9ee4c4465887f28f5df9c10f84d9f.svg",
     "static/media/icon_open_full.svg": "/motion-exhibition/static/media/icon_open_full.ca2307f781ee36584ef3dd9cf56a8f71.svg",
-    "main.8f21a031.css.map": "/motion-exhibition/static/css/main.8f21a031.css.map",
-    "main.63111fff.js.map": "/motion-exhibition/static/js/main.63111fff.js.map"
+    "main.763a423c.css.map": "/motion-exhibition/static/css/main.763a423c.css.map",
+    "main.ad0b043e.js.map": "/motion-exhibition/static/js/main.ad0b043e.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f21a031.css",
-    "static/js/main.63111fff.js"
+    "static/css/main.763a423c.css",
+    "static/js/main.ad0b043e.js"
   ]
 }
