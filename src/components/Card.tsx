@@ -99,7 +99,7 @@ export const Card = ({ input, index, total, setTargetInput }: Props) => {
             style={style}
             onClick={handleOnClickCard}
         >
-            <textarea value={input.text} readOnly />
+            <textarea value={input.text} readOnly rows={3} />
             {/* <div className="card-text">
                 <p>{input.text}</p>
             </div> */}

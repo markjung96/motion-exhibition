@@ -132,6 +132,7 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, targetInput }) => {
                     <textarea
                         className="answer"
                         ref={answerRef}
+                        rows={3}
                         onChange={handleAnswerInput}
                         autoFocus
                         value={input.text}
