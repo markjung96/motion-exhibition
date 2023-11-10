@@ -109,10 +109,6 @@ h2 {
     left: 1%;
 }
 
-.full-screen:hover {
-    background-color: #ffffff4d;
-}
-
 .slide-in {
     animation: slideIn 1s forwards;
 }
