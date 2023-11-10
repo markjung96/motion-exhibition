@@ -52,13 +52,6 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, targetInput }) => {
         setClassName('');
     };
 
-    const setFullScreen = () => {
-        const elem = document.documentElement as HTMLElement;
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        }
-    };
-
     useEffect(() => {
         if (isOpen) {
             answerRef.current?.focus();
@@ -86,7 +79,6 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, targetInput }) => {
                         text: '',
                         instagram: '',
                     });
-                    setFullScreen();
                 }
                 if (event.key === 'Enter') {
                     if (document.activeElement === answerRef.current) {
@@ -94,7 +86,6 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, targetInput }) => {
                         return;
                     }
                     if (document.activeElement === instaRef.current) {
-                        setFullScreen();
                         setClassName('reduction');
                         setTimeout(() => {
                             setClassName('disappear');
