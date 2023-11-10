@@ -11,24 +11,25 @@
     background-image: url('../assets/img/letter.png');
     background-repeat: no-repeat;
     background-size: contain;
-    transform: translateY(200%);
+    /* transform: translateY(200%); */
     transition: transform 0.3s ease-in-out;
     z-index: 10000;
+    opacity: 0;
 }
 
 .modal.active {
-    transform: translateY(0);
+    /* transform: translateY(0); */
     opacity: 1;
 }
 
-.modal.reduction {
+/* .modal.reduction {
     transform: scale(0.5) translateY(-50%);
     transition: transform 1s ease-in-out;
 }
 .modal.disappear {
     z-index: -2;
     opacity: 0;
-}
+} */
 
 .modal div:has(> textarea) {
     width: 100%;
