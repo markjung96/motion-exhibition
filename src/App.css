@@ -20,6 +20,7 @@
 }
 
 h1 {
+    text-align: center;
     font-size: 100px;
     text-shadow: 14px 14px 14px rgba(0, 0, 0, 0.24);
 }
@@ -28,6 +29,7 @@ h1 > span {
 }
 
 h2 {
+    text-align: center;
     font-size: 80px;
     text-shadow: 14px 14px 14px rgba(0, 0, 0, 0.24);
 }
@@ -65,6 +67,8 @@ h2 {
     top: 10%;
 
     font-size: 50px;
+
+    text-align: center;
 
     font-family: TomatoGrotesk;
     color: white;

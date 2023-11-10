@@ -19,7 +19,7 @@ interface ITargetInput {
 
 const A = () => (
     <h1 className="title">
-        what object reminds you of <br />
+        What object reminds you of <br />
         <span>Sarang?</span>
     </h1>
 );
@@ -136,7 +136,7 @@ function App() {
                         <p className="c-text">
                             What object reminds you of Sarang?
                             <br />
-                            Click background to let your story unfold.
+                            Click the background to let your story unfold.
                         </p>
                         <CardStack
                             inputs={input.inputs}
@@ -147,7 +147,8 @@ function App() {
                 {currentComponent === 'D' && (
                     <>
                         <p className="c-text">
-                            What object reminds you of Sarang?
+                            Let us know your instagram account to share Sarang
+                            with others.
                             <br />
                             Press return to continue.
                         </p>
