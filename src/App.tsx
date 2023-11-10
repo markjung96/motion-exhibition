@@ -60,14 +60,6 @@ function App() {
             }, 500); // 애니메이션 시간
         }, durations[currentComponent] - 500);
 
-    useEffect(() => {
-        const interval = setTimeAnimation();
-
-        setTimer(interval);
-
-        return () => clearTimeout(timer ? timer : 0);
-    }, [currentComponent]);
-
     const handleOnOpen = () => {
         setCurrentComponent('D');
         clearInterval(timer ? timer : 0);
@@ -85,9 +77,36 @@ function App() {
         setTargetInput(targetInput);
     };
 
+    const handleDoubleClickFullScreen = () => {
+        const fullscreenElement = document.fullscreenElement;
+        const elem = document.documentElement as HTMLElement;
+        console.log('fullscreenElement', fullscreenElement);
+        if (fullscreenElement === null) {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+    };
+
+    useEffect(() => {
+        const interval = setTimeAnimation();
+
+        setTimer(interval);
+
+        return () => clearTimeout(timer ? timer : 0);
+    }, [currentComponent]);
+
     return (
         <div className="App">
-            <div className="contents" onClick={handleOnOpen}>
+            <div
+                className="contents"
+                onClick={handleOnOpen}
+                onDoubleClick={handleDoubleClickFullScreen}
+            >
                 <Modal
                     targetInput={targetInput}
                     isOpen={isOpen}
