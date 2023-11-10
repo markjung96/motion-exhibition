@@ -89,12 +89,12 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, targetInput }) => {
                     setFullScreen();
                 }
                 if (event.key === 'Enter') {
-                    setFullScreen();
                     if (document.activeElement === answerRef.current) {
                         instaRef.current?.focus();
                         return;
                     }
                     if (document.activeElement === instaRef.current) {
+                        setFullScreen();
                         setClassName('reduction');
                         setTimeout(() => {
                             setClassName('disappear');

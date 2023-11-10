@@ -21,7 +21,7 @@ export const Card = ({ input, index, total, setTargetInput }: Props) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [style, setStyle] = useState({
         zIndex: index,
-        transform: `rotate(${0}deg) translateY(-160%)`,
+        transform: `rotate(${0}deg) translateY(-135%)`,
         transition: 'all 3s ease-in-out',
     });
 
@@ -59,7 +59,7 @@ export const Card = ({ input, index, total, setTargetInput }: Props) => {
         setTimeout(() => {
             setStyle({
                 zIndex: index,
-                transform: `rotate(${deg}deg) translateY(-160%)`,
+                transform: `rotate(${deg}deg) translateY(-135%)`,
                 transition: 'all 3s ease-in-out',
             });
             cardRef.current?.addEventListener('mouseenter', () => {
