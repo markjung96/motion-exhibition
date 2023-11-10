@@ -22,7 +22,7 @@
 }
 
 .modal.reduction {
-    transform: scale(0.5) translateY(-25%);
+    transform: scale(0.5) translateY(-58.5%);
     transition: transform 1s ease-in-out;
 }
 .modal.disappear {
